@@ -1,4 +1,3 @@
-'use strict';
 'use client';
 
 import React, { useState, useEffect } from 'react';
@@ -13,8 +12,7 @@ interface RecommendationListProps {
 }
 
 const DEFAULT_POOL = [
-  'AAPL', 'NVDA', 'TSLA', 'AMD', 'MSFT',
-  'PTT.BK', 'CPALL.BK', 'ADVANC.BK', 'BDMS.BK', 'KBANK.BK'
+  'NVDA', 'AAPL', 'TSLA', 'AMD', 'MSFT', 'AMZN', 'META', 'GOOGL', 'NFLX', 'PLTR'
 ];
 
 export default function RecommendationList({ onSelectStock, lang }: RecommendationListProps) {
