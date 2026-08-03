@@ -12,7 +12,22 @@ interface RecommendationListProps {
 }
 
 const DEFAULT_POOL = [
-  'NVDA', 'AAPL', 'TSLA', 'AMD', 'MSFT', 'AMZN', 'META', 'GOOGL', 'NFLX', 'PLTR'
+  // AI & Tech Giants
+  'NVDA', 'AAPL', 'TSLA', 'AMD', 'MSFT', 'AMZN', 'META', 'GOOGL', 'PLTR', 'NFLX',
+  // Semiconductors & Hardware
+  'AVGO', 'INTC', 'ARM', 'QCOM', 'SMCI', 'MU', 'ASML', 'TSM', 'AMAT', 'LRCX',
+  // Cloud, Software & Cybersecurity
+  'ORCL', 'CRM', 'ADBE', 'NOW', 'PANW', 'CRWD', 'SNOW', 'DDOG',
+  // EV & Aerospace / Defense
+  'RIVN', 'LCID', 'BA', 'LMT', 'NOC', 'GE',
+  // Fintech & Finance
+  'JPM', 'V', 'MA', 'BAC', 'PYPL', 'SQ', 'COIN', 'HOOD',
+  // Retail, Consumer & Entertainment
+  'WMT', 'COST', 'NKE', 'DIS', 'SBUX', 'MCD',
+  // Healthcare & Pharma
+  'LLY', 'NVO', 'JNJ', 'PFE', 'UNH',
+  // ETFs & Market Indexes
+  'QQQ', 'SPY'
 ];
 
 export default function RecommendationList({ onSelectStock, lang }: RecommendationListProps) {
@@ -71,7 +86,7 @@ export default function RecommendationList({ onSelectStock, lang }: Recommendati
         </div>
         
         <div className="space-y-3">
-          {[1, 2, 3].map((n) => (
+          {[1, 2, 3, 4, 5].map((n) => (
             <div key={n} className="h-[90px] bg-gray-950/40 border border-gray-900 rounded-xl animate-pulse flex items-center justify-between p-4">
               <div className="space-y-2">
                 <div className="h-4 w-16 bg-gray-800 rounded"></div>
@@ -89,7 +104,7 @@ export default function RecommendationList({ onSelectStock, lang }: Recommendati
     r => r.technicalSignals.rating === 'Strong Buy' || r.technicalSignals.rating === 'Buy'
   );
   
-  const displayPicks = buyPicks.length > 0 ? buyPicks.slice(0, 4) : recommendations.slice(0, 3);
+  const displayPicks = buyPicks.length > 0 ? buyPicks.slice(0, 5) : recommendations.slice(0, 5);
 
   return (
     <div className="glass-panel p-6 rounded-2xl flex flex-col gap-5">
